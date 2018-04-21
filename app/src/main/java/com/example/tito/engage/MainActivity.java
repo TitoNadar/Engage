@@ -21,6 +21,7 @@ import com.example.tito.engage.TinderCards.TinderCard;
 import com.example.tito.engage.TinderCards.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
+import com.sendbird.android.SendBird;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,14 +35,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -99,6 +93,10 @@ public class MainActivity extends AppCompatActivity
                 mSwipeView.undoLastSwipe();
             }
         });
+
+        //chat app
+        SendBird.init("C6CA0B0C-091A-4C5E-85CA-3814CF4D1BE9",this);
+
     }
 
 

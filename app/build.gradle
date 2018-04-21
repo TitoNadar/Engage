@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    repositories{
+    repositories {
         maven { url "https://raw.githubusercontent.com/smilefam/SendBird-SDK-Android/master/" }
     }
 }

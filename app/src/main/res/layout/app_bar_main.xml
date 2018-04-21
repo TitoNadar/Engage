@@ -19,8 +19,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -56,8 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="80dp"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/undoBtn"
@@ -69,7 +69,8 @@
             android:id="@+id/swipeView"
             android:layout_marginTop="100dp"
             android:layout_width="match_parent"
-            android:layout_height="450dp" />
+            android:layout_height="250dp"
+           />
 
     </FrameLayout>
 

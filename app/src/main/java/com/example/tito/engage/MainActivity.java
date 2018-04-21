@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,12 +16,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
+
 
 import com.example.tito.engage.TinderCards.Profile;
 import com.example.tito.engage.TinderCards.TinderCard;
 import com.example.tito.engage.TinderCards.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
+import com.takusemba.spotlight.CustomTarget;
+import com.takusemba.spotlight.OnSpotlightEndedListener;
+import com.takusemba.spotlight.OnSpotlightStartedListener;
+import com.takusemba.spotlight.SimpleTarget;
+import com.takusemba.spotlight.Spotlight;
 
 import java.util.ArrayList;
 
@@ -31,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     ArrayList<TinderCard> arrayList=new ArrayList<>();
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
+    private View imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())){
             tinderCard=new TinderCard(mContext, profile, mSwipeView);
             arrayList.add(tinderCard);
-            mSwipeView.addView(tinderCard);
+//            mSwipeView.addView(tinderCard);
         }
         for(int i=0;i<15;i++) {
             arrayList.get(i).onSwipeIn();
@@ -103,8 +113,39 @@ public class MainActivity extends AppCompatActivity
         });
 
         //chat app
-
+//        imageView = findViewById(R.id.profileImageView);
+//        int[] onelocation = new int[2];
+//        imageView.getLocationInWindow(onelocation);
+//        float oneX = onelocation[0] + imageView.getWidth()/2f;
+//        float oneY = onelocation[1] + imageView.getHeight()/2f;
+//
+//        final SimpleTarget simpleTarget = new SimpleTarget.Builder(MainActivity.this).setPoint(oneX,oneY)
+//                .setRadius(200f)
+//                .setDescription("Swipe left to reject")
+//                .build();
+//
+//        Spotlight.with(MainActivity.this)
+//                .setOverlayColor(ContextCompat.getColor(MainActivity.this, R.color.background))
+//                .setDuration(1000L)
+//                .setAnimation(new DecelerateInterpolator(2f))
+//                .setTargets(simpleTarget)
+//                .setClosedOnTouchedOutside(true)
+//                .setOnSpotlightStartedListener(new OnSpotlightStartedListener() {
+//                    @Override
+//                    public void onStarted() {
+//
+//                    }
+//                })
+//                .setOnSpotlightEndedListener(new OnSpotlightEndedListener() {
+//                    @Override
+//                    public void onEnded() {
+//
+//                    }
+//                })
+//                .start();
     }
+
+
 
 
     @Override

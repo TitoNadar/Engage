@@ -82,7 +82,7 @@ public class TinderCard {
     @SwipeOut
     public void onSwipedOut(){
         Log.d("EVENT", "onSwipedOut");
-      mSwipeView.addView(this);
+//      mSwipeView.addView(this);
     }
 
     @SwipeCancelState

@@ -1,12 +1,15 @@
 package com.example.tito.engage.TinderCards;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
+import com.example.tito.engage.Details;
+import com.example.tito.engage.MainActivity;
 import com.example.tito.engage.R;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.mindorks.placeholderview.annotations.Click;
@@ -94,6 +97,8 @@ public class TinderCard {
     public void onSwipeIn()
     {
         Log.d("EVENT", "onSwipedIn");
+
+
 
     }
 

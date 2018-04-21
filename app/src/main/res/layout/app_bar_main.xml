@@ -67,9 +67,9 @@
         </LinearLayout>
         <com.mindorks.placeholderview.SwipePlaceHolderView
             android:id="@+id/swipeView"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="405dp"
            />
 
     </FrameLayout>

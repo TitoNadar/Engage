@@ -1,6 +1,7 @@
 package com.example.tito.engage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -85,12 +86,12 @@ public class MainActivity extends AppCompatActivity
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())){
             tinderCard=new TinderCard(mContext, profile, mSwipeView);
             arrayList.add(tinderCard);
-//            mSwipeView.addView(tinderCard);
+          mSwipeView.addView(tinderCard);
         }
-        for(int i=0;i<15;i++) {
+        for(int i=0;i<6;i++) {
             arrayList.get(i).onSwipeIn();
             arrayList.get(i).onSwipedOut();
-        }
+       }
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,4 +205,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

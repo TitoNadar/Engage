@@ -21,11 +21,14 @@ import com.example.tito.engage.TinderCards.TinderCard;
 import com.example.tito.engage.TinderCards.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
-import com.sendbird.android.SendBird;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    TinderCard tinderCard;
+    ArrayList<TinderCard> arrayList=new ArrayList<>();
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
     @Override
@@ -70,9 +73,14 @@ public class MainActivity extends AppCompatActivity
 
 
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())){
-            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            tinderCard=new TinderCard(mContext, profile, mSwipeView);
+            arrayList.add(tinderCard);
+            mSwipeView.addView(tinderCard);
         }
-
+        for(int i=0;i<15;i++) {
+            arrayList.get(i).onSwipeIn();
+            arrayList.get(i).onSwipedOut();
+        }
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +103,6 @@ public class MainActivity extends AppCompatActivity
         });
 
         //chat app
-        SendBird.init("C6CA0B0C-091A-4C5E-85CA-3814CF4D1BE9",this);
 
     }
 

@@ -76,13 +76,13 @@ public class TinderCard {
     @Click(R.id.profileImageView)
     private void onClick(){
         Log.d("EVENT", "profileImageView click");
-//        mSwipeView.addView(this);
+        mSwipeView.addView(this);
     }
 
     @SwipeOut
-    private void onSwipedOut(){
+    public void onSwipedOut(){
         Log.d("EVENT", "onSwipedOut");
-//        mSwipeView.addView(this);
+      mSwipeView.addView(this);
     }
 
     @SwipeCancelState
@@ -91,8 +91,10 @@ public class TinderCard {
     }
 
     @SwipeIn
-    private void onSwipeIn(){
+    public void onSwipeIn()
+    {
         Log.d("EVENT", "onSwipedIn");
+
     }
 
     @SwipeInState

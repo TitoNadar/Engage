@@ -62,7 +62,7 @@ public class TinderCard {
         Glide.with(mContext).load(mProfile.getImageUrl())
                 .bitmapTransform(multi)
                 .into(profileImageView);
-        nameAgeTxt.setText(mProfile.getName() + ", " + mProfile.getAge());
+      //  nameAgeTxt.setText(mProfile.getName() + ", " + mProfile.getAge());
         locationNameTxt.setText(mProfile.getLocation());
     }
 
